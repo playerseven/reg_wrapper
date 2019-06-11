@@ -11,10 +11,6 @@ class RegWrapper {
     static_assert(RegSize <= 32, "Register size could not be more than 32 bits");
 public:
     using Reg = volatile uint32_t;
-
-    RegWrapper() = default;
-    RegWrapper(const RegWrapper&) = default;
-    RegWrapper& operator=(const RegWrapper&) = default;
     
     RegWrapper& operator=(uint32_t val) noexcept {
         *ptr = val;
